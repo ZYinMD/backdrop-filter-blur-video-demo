@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo: backdrop-filter: blur × video</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        overflow: hidden;
+        margin: 0;
+      }
+      .foreground {
+        display: flex;
+        backdrop-filter: blur(5px) brightness(80%);
+      }
+      .foreground .text {
+        max-width: 500px;
+        padding: 20px;
+      }
+      .foreground video {
+        height: 100vh;
+      }
+      .background {
+        position: fixed;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="foreground">
+      <div class="text">
+        <p>
+          <strong>Issue reproduction</strong>: you're expected to see some frame
+          drops in the video. It'll look like the video is jumping from one
+          frame to another.
+        </p>
+        <p>
+          <strong>Note</strong>: Opening the devTools immediately fixes the
+          issue. No idea why, but it helps with comparison.
+        </p>
+        <p>
+          <strong>Note</strong>: I'm on a mid-end PC with integrated GPU. Not
+          sure if you'll experience the same thing if you're on a very good
+          computer.
+        </p>
+      </div>
+      <video src="./6958017493537459457.mp4" controls loop></video>
+    </div>
+  </body>
+  <script>
+    document.querySelector(".background").textContent = `🌞 `.repeat(300);
+  </script>
+</html>
