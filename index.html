@@ -32,13 +32,17 @@
     <div class="foreground">
       <div class="text">
         <p>
-          <strong>Issue reproduction</strong>: you're expected to see some frame
-          drops in the video. It'll look like the video is jumping from one
-          frame to another.
+          This page uses the css property
+          <code>backdrop-filter: blur(5px)</code> to blur the background.
         </p>
         <p>
-          <strong>Note</strong>: Opening the devTools immediately fixes the
-          issue. No idea why, but it helps with comparison.
+          <strong>Issue</strong>: When using this css effect, the foreground
+          video unexpectedly suffers from random frame-drops, looking like the
+          video is jumping from one frame to another.
+        </p>
+        <p>
+          <strong>Note</strong>: Opening devTools immediately fixes the issue.
+          No idea why, but it helps with comparison.
         </p>
         <p>
           <strong>Note</strong>: I'm on a mid-end PC with integrated GPU. Not
