@@ -18,7 +18,7 @@
       .foreground .text {
         max-width: 500px;
         padding: 10px;
-        line-height: 1.25em;
+        line-height: 1.2em;
       }
       .foreground video {
         height: 100vh;
@@ -48,20 +48,25 @@
 
         <p><strong>How to tell if you are seeing frame drops:</strong></p>
         <p>
-          method1: you can open
+          method1: since firefox doesn't support blur, you can open the site in
+          firefox, see if playback becomes smoother.
+          <br /><br />
+          method2: you can open
           <a href="./video1.mp4" target="_blank">video1</a> and
           <a href="./video2.mp4" target="_blank">video2</a> directly, then watch
           again, see if it becomes smoother. <br /><br />
-          method2: Opening devTools immediately fixes the issue (I have no idea
-          why). So you can open devTools and watch again, see if playback
-          becomes smoother.<br /><br />
-          method3: the
+          method3: Opening devTools immediately fixes the issue (I have no idea
+          why). So you can open devTools and watch again, see if playback is
+          smoother when devTools is open.<br /><br />
+          method4: the
           <code>backdrop-filter</code> css is applied to
           <code>div.foreground</code>, you can remove it and watch again.
         </p>
         <p>
-          <strong>Note</strong>: I'm on a mid-end PC with integrated GPU. Not
-          sure if it's the same on your computer.
+          <strong>Note</strong>: I recommend trying method1 first, if you can
+          tell a different with method1, then test 234. If there's no difference
+          in method1, then this issue is less likely to reproduce on your
+          computer.
         </p>
         <p>
           source code:
