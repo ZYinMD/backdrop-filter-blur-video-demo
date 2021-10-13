@@ -18,6 +18,7 @@
       .foreground .text {
         max-width: 500px;
         padding: 10px;
+        line-height: 1.25em;
       }
       .foreground video {
         height: 100vh;
@@ -34,27 +35,33 @@
     <div class="foreground">
       <div class="text">
         <p>
-          <strong>Reproduce:</strong>Watch either video, with sound turned on.
-        </p>
-        <p>
           <strong>Issue</strong>: This page uses the css property
           <code>backdrop-filter: blur(5px)</code> to blur the background. When
-          using this effect, foreground video unexpectedly suffers from random
-          frame-drops, looking like the video is jumping from one frame to
-          another.
+          using this effect, the fps of foreground video unexpectedly becomes
+          much lower. It can also randomly skip large numbers of frames at once,
+          making the video jump from one frame to another.
         </p>
         <p>
-          <strong>Note</strong>: Opening devTools immediately fixes the issue.
-          No idea why, but it helps with comparison. If you're not sure whether
-          you've noticed any issue, open devTools and watch again, see if
-          playback becomes smoother when devTools are open. (Of course, remove
-          the blur effect from css and watch again is a more definitive way to
-          compare.)
+          <strong>To reproduce: </strong> watch either video, with sound turned
+          on.
+        </p>
+
+        <p><strong>How to tell if you are seeing frame drops:</strong></p>
+        <p>
+          method1: you can open
+          <a href="./video1.mp4" target="_blank">video1</a> and
+          <a href="./video2.mp4" target="_blank">video2</a> directly, then watch
+          again, see if it becomes smoother. <br /><br />
+          method2: Opening devTools immediately fixes the issue (I have no idea
+          why). So you can open devTools and watch again, see if playback
+          becomes smoother.<br /><br />
+          method3: the
+          <code>backdrop-filter</code> css is applied to
+          <code>div.foreground</code>, you can remove it and watch again.
         </p>
         <p>
           <strong>Note</strong>: I'm on a mid-end PC with integrated GPU. Not
-          sure if you'll experience the same thing if you're on a very good
-          computer.
+          sure if it's the same on your computer.
         </p>
         <p>
           source code:
